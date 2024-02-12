@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  OracleDB:
+    image: oracledb19c/oracle.19.3.0-ee:oracle19.3.0-ee
+    container_name: oracleDB
+    ports:
+      - 1521:1521
+      - 5500:5500
+    environment:
+      - ORACLE_SID=ORCLCDB
+      - ORACLE_PDB=ORCLPDB1
+      - ORACLE_PWD=YourPassword
+      - SERVICE_NAME=ORCLCDB
+    volumes:
+      - /opt/oracle/oradata

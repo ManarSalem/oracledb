@@ -1,0 +1,22 @@
+server:
+  port: 8087
+  error:
+    include-message: always
+spring:
+  application:
+    name: address
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:ORCLCDB
+    username: system
+    password: YourPassword
+    driver_class_name: oracle.jdbc.OracleDriver
+    hikari:
+      idle_timeout: 10000
+      minimum_idle: 0
+  jpa:
+    open_in_view: false
+    hibernate:
+      ddl_auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
